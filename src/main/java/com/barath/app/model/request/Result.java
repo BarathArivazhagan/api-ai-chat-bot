@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 public class Result {
 
     @JsonProperty("parameters")
-    private Parameters parameters;
+    private Map<String,Object> parameters;
     @JsonProperty("contexts")
     private List<Object> contexts = null;
     @JsonProperty("resolvedQuery")
@@ -49,13 +49,11 @@ public class Result {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    @JsonProperty("parameters")
-    public Parameters getParameters() {
+    public Map<String, Object> getParameters() {
         return parameters;
     }
 
-    @JsonProperty("parameters")
-    public void setParameters(Parameters parameters) {
+    public void setParameters(Map<String, Object> parameters) {
         this.parameters = parameters;
     }
 
